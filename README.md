@@ -1,11 +1,6 @@
-# RocketLeagueOrion
-# New and improved version [over here](https://github.com/SpoinkyNL/Artemis)
-Shows how much boost you have in Rocket League on the Logitech G910 Orion and similar Logitech devices (Untested).
+# RocketLeagueCorsair
+Este repositorio es un fork de [RocketLeagueOrion](https://github.com/SpoinkyNL/RocketLeagueOrion), propiedad de [SpoinkyNL](https://github.com/SpoinkyNL)
 
-To use it download the LogitechLEDSDK and place the DLL into the same directory as the RocketLeagueOrion.exe
-[Video](https://www.youtube.com/watch?v=L8rqFGaPeTg)
+El objetivo es el mismo, es decir, mostrar el turbo que tienes en Rocket League a través de las luces de un teclado RGB de Corsair, en principio, cualquiera de ellos. Solo funciona en Windows, y solo si la direccion de memoria esta actualizada. Este software solo lee de la memoria del juego, no escribe en ella.
 
-Written in C# WinForms, I'd love any feedback on the code style
-It only reads memory and does NOT write to it, still, use at your own risk.
-
-To use go to [Releases](https://github.com/SpoinkyNL/RocketLeagueOrion/releases), download the latest RocketLeagueOrion.binaries.zip, extract the ZIP and run RocketLeagueOrion.exe
+Para probarlo, descarga la ultima version desde [Releases](https://github.com/Dr-Noob/RocketLeagueCorsair/releases)
