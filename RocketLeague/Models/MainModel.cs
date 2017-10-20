@@ -13,11 +13,19 @@ namespace RocketLeagueOrion.Models
         private int _boostAmount;
         // GUI
         private string _status;
-        #endregion
+		#endregion
+
+		private CorsairSDK keyboard;
 
         public MainModel(MainView mainView)
         {
             MainView = mainView;
+			keyboard = new CorsairSDK();
+			if (!keyboard.isKeyboardWorking())
+			{
+				Console.WriteLine("FATAL ERROR: Corsair keyboard is not available");
+				System.Windows.Forms.Application.Exit();
+			}
         }
 
         private MainView MainView { get; }
@@ -53,9 +61,10 @@ namespace RocketLeagueOrion.Models
         public void GetBoostAmount()
         {
             var memory = new Memory(RocketLeagueProcess);
-            BoostAddress = memory.GetAddress("\"RocketLeague.exe\"+015817E0+120+50+6f4+21c");
+            BoostAddress = memory.GetAddress("\"RocketLeague.exe\"+019425CC+54+1FC+398+77C+740");
 
-            var boostFloat = memory.ReadFloat(BoostAddress) * 100 / 3;
+            var boostFloat = memory.ReadFloat(BoostAddress) * 100;
+			keyboard.setlevel((int)boostFloat);
             PreviousBoost = BoostAmount;
             BoostAmount = (int)Math.Ceiling(boostFloat);
         }
